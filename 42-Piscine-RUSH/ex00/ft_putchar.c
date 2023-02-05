@@ -6,7 +6,7 @@
 /*   By: kisik < kisik@student.42kocaeli.com.tr     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 01:28:30 by kisik             #+#    #+#             */
-/*   Updated: 2023/02/05 02:12:03 by kisik            ###   ########.fr       */
+/*   Updated: 2023/02/05 03:27:33 by kisik            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_putchar(int satir, int sutun, int x, int y)
 {
-	if ((x == 0 && y == 0) || (x == satir - 1 && y == 0))
+	if ((x == 0 && (y == 0  || y == sutun - 1)))
 	{
 		write(1, "o", 1);
 	}
-	else if ((x == 0 && y == sutun - 1) || (x == satir - 1 && y == sutun - 1))
+	else if ((x == satir - 1 && (y == sutun - 1 || y == 0)))
 	{
 		write(1, "o", 1);
 	}
