@@ -1,17 +1,24 @@
-#include <unistd.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kisik < kisik@student.42kocaeli.com.tr     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/10 15:54:36 by kisik             #+#    #+#             */
+/*   Updated: 2023/02/10 21:30:55 by kisik            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void  ft_ft(int *nbr)
+#include <stdio.h>
+void	ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
-
 int main()
 {
-	int nbr = 0;
-	int *pNbr = &nbr;
-	printf("Before: %d\n", nbr);
-	ft_ft(pNbr);
-	printf("After: %d\n", nbr);
+	int nbr = 69;
+	ft_ft(&nbr);
+	printf("%d", nbr);
 	return 0;
 }

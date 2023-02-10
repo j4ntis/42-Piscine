@@ -1,23 +1,33 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kisik < kisik@student.42kocaeli.com.tr     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/10 15:59:40 by kisik             #+#    #+#             */
+/*   Updated: 2023/02/10 19:18:55 by kisik            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write(1, &c, 1);
-}
+	int	i;
 
-void ft_putstr(char *str)
-{
-	while (*str != '\0')
+	i = 0;
+	while (str[i] >= '\0')
 	{
-		ft_putchar(*str);
-		str++;
+		write(1, &str[i], 1);
+		i++;
 	}
 }
 
 int main()
 {
-	char name[] = "Kerem";
+	char name[5] = {'k', 'e', 'r', 'e', 'm'};
 	ft_putstr(name);
 	return 0;
 }
+

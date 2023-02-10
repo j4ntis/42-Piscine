@@ -1,17 +1,30 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kisik < kisik@student.42kocaeli.com.tr     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/10 15:56:18 by kisik             #+#    #+#             */
+/*   Updated: 2023/02/10 19:06:29 by kisik            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <stdio.h>
-
-void ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
+	int	t;
 
+	t = *a;
+	*a = *b;
+	*b = t;
+}
 int main()
 {
-	int a = 6;
-	int b = 9;
+	int a = 3;
+	int b = 5;
 	ft_swap(&a, &b);
+	printf("%d %d", a, b);
 	return 0;
 }
