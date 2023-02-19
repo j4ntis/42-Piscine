@@ -17,7 +17,7 @@ char *ft_strdup(char *s1)
 #include <stdio.h>
 int main()
 {
-    char a[] = "kerem";
+    char a[] = "example";
     printf("%s", ft_strdup(a));
 }
 */
