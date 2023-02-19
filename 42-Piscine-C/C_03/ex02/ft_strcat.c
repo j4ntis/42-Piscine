@@ -1,16 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kisik < kisik@student.42kocaeli.com.tr     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/10 15:54:36 by kisik             #+#    #+#             */
-/*   Updated: 2023/02/10 15:54:50 by kisik            ###   ########.fr       */
+/*   Created: 2023/02/15 19:04:07 by kisik             #+#    #+#             */
+/*   Updated: 2023/02/15 19:04:09 by kisik            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ft(int *nbr)
+int	ft_strlen(char *str)
 {
-	*nbr = 42;
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strcat(char *dest, char *src)
+{
+	int	i;
+	int	x;
+
+	i = 0;
+	x = ft_strlen(dest);
+	while (src[i] != '\0')
+	{
+		dest[x] = src[i];
+		x++;
+		i++;
+	}
+	dest[x] = '\0';
+	return (dest);
 }

@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kisik < kisik@student.42kocaeli.com.tr     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/10 15:54:36 by kisik             #+#    #+#             */
-/*   Updated: 2023/02/10 15:54:50 by kisik            ###   ########.fr       */
+/*   Created: 2023/02/17 11:55:19 by kisik             #+#    #+#             */
+/*   Updated: 2023/02/17 13:05:37 by kisik            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ft(int *nbr)
+#include <unistd.h>
+
+void	ft_putchar(char chr)
 {
-	*nbr = 42;
+	write(1, &chr, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int	index;
+
+	index = 0;
+	while (str[index])
+	{
+		ft_putchar(str[index]);
+		index++;
+	}
 }
