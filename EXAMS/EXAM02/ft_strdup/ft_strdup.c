@@ -20,5 +20,5 @@ int main()
     char a[] = "example";
     printf("%s", ft_strdup(a));
 }
-*/
+*/ 
 
