@@ -40,4 +40,4 @@ int main(int ac, char **av)
 	write(1, "\n", 1);
 	return 0;
 }
-//"Papache est un sabre" "a" "o"
+//"Papache est un sabre" "a" "o" 
