@@ -1,33 +1,37 @@
 #include <unistd.h>
 
-int		letter_count(char c)
+void print_char(char cr)
 {
-	int	repeat;
-
-	if (c >= 'A' && c <= 'Z')
-		repeat = c - 'A' + 1;
-	else if (c >= 'a' && c <= 'z')
-		repeat = c - 'a' + 1;
-	else
-		repeat = 1;
-	return (repeat);
+	write(1, &cr, 1);
 }
 
-int		main(int ac, char **av)
+int repeat_times(char x)
 {
-	int	repeat;
-	char* str = av[1];
-	int i;
-	if (ac == 2)
+	if(x >='a' && x <= 'z')
+		return x - 'a' + 1;
+	if(x >='A' && x <= 'Z')
+		return x - 'A' + 1;
+	return 1;
+}
+
+int main(int ac, char **av)
+{
+	char *str = av[1];
+	int i = 0;
+	int times;
+	if(ac == 2)
 	{
-		i = 0;
 		while (str[i])
 		{
-			repeat = letter_count(str[i]);
-			while (repeat--)
-				write(1, str+i, 1);
+			times = repeat_times(str[i]);
+			while (times)
+			{
+				print_char(str[i]);
+				times--;
+			}
 			i++;
 		}
 	}
-	write(1, "\n", 1);
+	print_char('\n');
+	return 0;
 }
