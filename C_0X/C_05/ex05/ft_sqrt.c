@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kisik < kisik@student.42kocaeli.com.tr     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 12:54:51 by kisik             #+#    #+#             */
-/*   Updated: 2023/02/23 15:20:38 by kisik            ###   ########.fr       */
+/*   Created: 2023/02/23 12:54:57 by kisik             #+#    #+#             */
+/*   Updated: 2023/02/23 15:21:23 by kisik            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_fibonacci(int index)
+int	ft_sqrt(int nb)
 {
-	if (index < 0)
-		return (-1);
-	if (index == 0)
-		return (0);
-	if (index == 1)
-		return (1);
-	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	int	i;
+
+	i = 1;
+	while (i * i <= nb && i <= 46340)
+	{
+		if (i * i == nb)
+			return (i);
+		else
+			i++;
+	}
+	return (0);
 }

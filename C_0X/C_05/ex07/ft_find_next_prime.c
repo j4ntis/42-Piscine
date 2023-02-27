@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kisik < kisik@student.42kocaeli.com.tr     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 12:54:51 by kisik             #+#    #+#             */
-/*   Updated: 2023/02/23 15:20:38 by kisik            ###   ########.fr       */
+/*   Created: 2023/02/23 12:55:15 by kisik             #+#    #+#             */
+/*   Updated: 2023/02/23 15:20:48 by kisik            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_fibonacci(int index)
+int	ft_is_prime(int nb)
 {
-	if (index < 0)
-		return (-1);
-	if (index == 0)
+	int	n;
+
+	n = 2;
+	if (nb < 2)
 		return (0);
-	if (index == 1)
-		return (1);
-	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	while (n <= nb / 2)
+	{
+		if (nb % n == 0)
+			return (0);
+		n++;
+	}
+	return (1);
+}
+
+int	ft_find_next_prime(int nb)
+{
+	while (nb < 2147483647 && !ft_is_prime(nb))
+		nb++;
+	return (nb);
 }

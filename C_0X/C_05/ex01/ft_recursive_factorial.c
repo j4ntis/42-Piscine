@@ -1,15 +1,20 @@
-int ft_recursive_factorial(int nb)
-{
-	if(nb>1)
-		nb = nb * ft_recursive_factorial(nb - 1);
-	else
-		return 1;
-	return nb;
-}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kisik < kisik@student.42kocaeli.com.tr     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/23 12:54:15 by kisik             #+#    #+#             */
+/*   Updated: 2023/02/23 15:21:11 by kisik            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdio.h>
-int main()
+int	ft_recursive_factorial(int nb)
 {
-	int a = ft_recursive_factorial(5);
-	printf("%d", a);
+	if (nb < 0)
+		return (0);
+	if (nb == 0 || nb == 1)
+		return (1);
+	return (nb * ft_recursive_factorial(nb - 1));
 }
